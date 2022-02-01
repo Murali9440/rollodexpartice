@@ -1,13 +1,14 @@
 import React  from 'react'
-import CardList from '../../components/Card-List/Card-List.component';
-import search from '../../components/search/search.components';
+import Cardlist from '../../components/Card-list/Card-list.components';
+import Search from '../../components/Search/Search.components';
+import './Home.style.css'
 
 class Home extends React.Component{
     constructor(){
         super();
-        this.setState = {
-            monsters = [],
-            searchField : ``
+        this.state={
+            monsters:[],
+            searchField:''
         }
     }
     
@@ -23,14 +24,14 @@ class Home extends React.Component{
 
     render(){
         const{monsters,searchField} = this.state
-        const filteredMonsters = monsters.filter((monster) => monster.name.toLowerCase().include(searchField.toLowerCase()))
+       const filteredMonsters = monsters.filter((monster) =>monster.name.toLowerCase().includes(searchField.toLowerCase()))
         return(
             <>
             <div className='App'>
                 <h1>Monsters rollodex</h1>
 
-                <search handleSearch ={this.handleSearch} />
-                <CardList monsters = {filteredMonsters} />
+                <Search handleSearch ={this.handleSearch} />
+                <Cardlist monsters = {filteredMonsters} />
 
             </div>
             </>
@@ -38,3 +39,5 @@ class Home extends React.Component{
     }
 
 }
+
+export default Home

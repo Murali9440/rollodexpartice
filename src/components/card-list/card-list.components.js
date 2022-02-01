@@ -1,7 +1,8 @@
-import card from '../Card/Card.components'
-import './card-list.components'
+import Card from '../Card/Card.components';
+import './Card-list.style.css'
 
-const CardList = (props) => {
+const Cardlist = (props) => {
+
 
     const {monsters} = props 
     return(
@@ -9,7 +10,7 @@ const CardList = (props) => {
             {
                 monsters.map(
                     (monster,index) => (
-                        <card key={index} monster={monster} />
+                        <Card key={index} monster={monster} />
                     )
                 )
             }
@@ -18,4 +19,4 @@ const CardList = (props) => {
     )
 }
 
-export default CardList
+export default Cardlist
